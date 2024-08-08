@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  color: #3A393A;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+#graduatedHome .splide__pagination {
+  bottom: -30px;
+}
+
+#graduatedHome .splide__pagination__page {
+  background-color: 3A393A;
+  opacity: 0.8;
+}
+
+#graduatedHome .splide__pagination__page.is-active {
+  background-color: #098DA2;
+}
+
+.bggradient {
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 40%, rgba(255, 255, 255, 0.77) 80%, #FFF 100%), linear-gradient(90deg, rgba(255, 255, 255, 0.40) 0%, rgba(123, 238, 255, 0.40) 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .bggradient {
+    background: linear-gradient(180deg, #FFF 0%, rgba(123, 238, 255, 0.50) 50%, #FFF 100%);
+  }
+}
+
+.staffCard::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 10px;
+    background-image: url("/images/bottom_dashed.png");
+}
+
+#scheduler h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#scheduler button {
+  font-size: 14px;
+}
+
+#scheduler .day-tile {
+  height: 50px;
+}
+
+#scheduler .react-calendar {
+  min-height: auto;
+}

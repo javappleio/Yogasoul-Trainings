@@ -1,0 +1,30 @@
+[
+    {
+        "title": "50 Hours Off-rocket",
+        "description": "A 5 Day Advanced teacher training for those eager teachers looking to expand their practice, and teaching knowledge and confidence whilst learning all about the Rocket.",
+        "image": "/images/offrocket.jpg",
+        "hash": "off-rocket",
+        "nav": "OFF-ROCKET"
+    },
+    {
+        "title": "TRIPSICHORE WEEKEND INTENSIVE",
+        "description": "Join the creator of this practice, Edward Clark, a practice that has been around since 1979 and borne some of the worlds top teachers yet goes mainly unknown.",
+        "image": "/images/sutra.jpg",
+        "hash": "tripsichore-immersion",
+        "nav": "Tripsichore 3 Day Intensive"
+    },
+    {
+        "title": "20 HOURS MANDALA MASTERY",
+        "description": "The first advanced Mandala TT, Level up your Mandala by understanding Elemental interactions and new creative ways of sequencing with Dulce.",
+        "image": "/images/mandala.jpg",
+        "hash": "20-hours-mandala-mastery",
+        "nav": "20 Hour Mandala Mastery"
+    },
+    {
+        "title": "FOUNDATION",
+        "description": "This teacher training is for, students who are looking to develop their understanding of the yoga practice, continue their spiritual journey.",
+        "image": "/images/foundation.jpg",
+        "hash": "foundation",
+        "nav": "Foundation"
+    }
+]
