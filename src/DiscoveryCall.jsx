@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import LayoutDark from './layout/LayoutDark.jsx'
 import logo from './assets/images/iso_ys.png'
 import samuel from './assets/images/samuel.png'
 import { IoIosCheckmark } from "react-icons/io";
+import emailjs from '@emailjs/browser'
 
 import { ScheduleMeeting } from 'react-schedule-meeting';
 
@@ -13,6 +14,26 @@ const DiscoveryCall = () => {
   const [staff, setStaff] = useState("");
   const [date, setDate] = useState("");
   const [training, setTraining] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const nameSelected = (value) => {
+    setName(value);
+  }
+
+  const surnameSelected = (value) => {
+    setSurname(value);
+  }
+
+  const emailSelected = (value) => {
+    setEmail(value);
+  }
+
+  const phoneSelected = (value) => {
+    setPhone(value);
+  }
 
   const changeSelected = (value) => {
     setSelected(value);
@@ -149,8 +170,8 @@ const DiscoveryCall = () => {
               selected === 0 ? <ServiceBlock changeSelected={changeSelected} trainingSelected={trainingSelected} /> :
               selected === 1 ? <StaffBlock changeSelected={changeSelected} staffSelected={staffSelected} /> :
               selected === 2 ? <DateTimeBlock changeSelected={changeSelected} dateSelected={dateSelected} /> :
-              selected === 3 ? <InformationBlock changeSelected={changeSelected} /> :
-              selected === 4 ? <ConfirmationBlock changeSelected={changeSelected} date={date} staff={staff} training={training} /> :
+              selected === 3 ? <InformationBlock changeSelected={changeSelected} nameSelected={nameSelected} surnameSelected={surnameSelected} emailSelected={emailSelected} phoneSelected={phoneSelected} /> :
+              selected === 4 ? <ConfirmationBlock changeSelected={changeSelected} date={date} staff={staff} training={training} nameSelected={name} surnameSelected={surname} emailSelected={email} phoneSelected={phone} /> :
               selected === 5 ? <SuccessBlock /> : null
             }
           </div>
@@ -163,9 +184,12 @@ export default DiscoveryCall
 
 const ServiceBlock = ({changeSelected, trainingSelected}) => {
 
+  const [trainingSel, changeTrainingSel] = useState("");
+
   const handleSelected = (value, training) => {
     changeSelected(value);
     trainingSelected(training);
+    changeTrainingSel(training);
   }
 
   return (
@@ -191,7 +215,7 @@ const ServiceBlock = ({changeSelected, trainingSelected}) => {
       </div>
       <div className='w-full px-5 h-16 flex justify-between items-center border-b border-b-gray-300 bg-white'>
         <button className='bg-gray-200 text-gray-500 text-center font-bold text-xs py-2 px-3.5 pb-1.5 border border-gray-300 rounded opacity-30' disabled>BACK</button>
-        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' onClick={() => handleSelected(1)}>NEXT STEP</button>
+        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' disabled={ trainingSel === "" ? true : false } onClick={() => handleSelected(1)}>NEXT STEP</button>
       </div>
     </div>
   )
@@ -199,9 +223,14 @@ const ServiceBlock = ({changeSelected, trainingSelected}) => {
 
 const StaffBlock = ({changeSelected, staffSelected}) => {
 
+  const [staffSel, changeStaffSel] = useState("");
+
   const handleClick = (value) => {
     staffSelected(value);
-  };
+    changeStaffSel(value);
+    document.getElementById("samDiv").classList.add("border-green-500");
+    document.getElementById("samDiv").classList.remove("border-white");
+  }
 
   const handleSelected = (value) => {
     changeSelected(value);
@@ -213,7 +242,7 @@ const StaffBlock = ({changeSelected, staffSelected}) => {
         <h3 className='text-lg font-bold -mb-2 uppercase'>Select staff</h3>
       </div>
       <div className='w-full px-8 py-8 h-full lg:h-[472px] flex flex-wrap flex-row justify-center lg:justify-start items-start gap-5 border-b border-b-gray-300'>
-        <div className="flex flex-col justify-start items-center p-5 bg-white size-52 border-2 border-white hover:border-green-500 transition-all rounded cursor-pointer relative staffCard w-full lg:w-fit" onClick={() => handleClick("Samuel Nwokeka")} style={{ boxShadow: "0 0 30px 0 rgba(0,0,0,0.05)" }}>
+        <div id="samDiv" className="flex flex-col justify-start items-center p-5 bg-white size-52 border-2 border-white hover:border-green-500 transition-all rounded cursor-pointer relative staffCard w-full lg:w-fit" onClick={() => handleClick("Samuel Nwokeka")} style={{ boxShadow: "0 0 30px 0 rgba(0,0,0,0.05)" }}>
           <img src={samuel} alt="" className='size-20 rounded-full object-cover object-center mb-8' />
           <h5 className='font-bold uppercase text-center text-sm'>Samuel Nwokeka</h5>
           <p className='text-xs text-center text-dark/50'>hello@yogasoulmcr.co.uk</p>
@@ -221,13 +250,15 @@ const StaffBlock = ({changeSelected, staffSelected}) => {
       </div>
       <div className='w-full px-5 h-16 flex justify-between items-center border-b border-b-gray-300 bg-white'>
         <button className='bg-gray-200 text-gray-500 text-center font-bold text-xs py-2 px-3.5 pb-1.5 border border-gray-300 rounded cursor-pointer' onClick={() => handleSelected(0)}>BACK</button>
-        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' onClick={() => handleSelected(2)}>NEXT STEP</button>
+        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' disabled={staffSel === "" ? true : false} onClick={() => handleSelected(2)}>NEXT STEP</button>
       </div>
     </div>
   )
 }
 
 const DateTimeBlock = ({changeSelected, dateSelected}) => {
+
+  const [dateSel, changeDateSel] = useState("");
 
   const availableTimeslots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((id) => {
     return {
@@ -249,6 +280,7 @@ const DateTimeBlock = ({changeSelected, dateSelected}) => {
     const formattedTime = value.toLocaleTimeString('en-US', optionsTime);
     
     dateSelected(`${formattedDate}. ${formattedTime}`);
+    changeDateSel(`${formattedDate}. ${formattedTime}`);
     console.log(`${formattedDate}. ${formattedTime}`);
   }
 
@@ -269,13 +301,18 @@ const DateTimeBlock = ({changeSelected, dateSelected}) => {
       </div>
       <div className='w-full px-5 h-16 flex justify-between items-center border-b border-b-gray-300 bg-white'>
         <button className='bg-gray-200 text-gray-500 text-center font-bold text-xs py-2 px-3.5 pb-1.5 border border-gray-300 rounded cursor-pointer' onClick={() => handleSelected(1)}>BACK</button>
-        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' onClick={() => handleSelected(3)}>NEXT STEP</button>
+        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' disabled={dateSel === "" ? true : false} onClick={() => handleSelected(3)}>NEXT STEP</button>
       </div>
     </div>
   )
 }
 
-const InformationBlock = ({changeSelected}) => {
+const InformationBlock = ({changeSelected, nameSelected, surnameSelected, emailSelected, phoneSelected}) => {
+
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleSelected = (value) => {
     changeSelected(value);
@@ -290,41 +327,63 @@ const InformationBlock = ({changeSelected}) => {
         <div className="flex flex-col lg:flex-row justify-start items-center gap-5 w-full">
           <div className="flex flex-col justify-start items-start gap-2 w-full lg:w-5/12">
             <label>Name *</label>
-            <input type="text" className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
+            <input type="text" onChange={(e) => setName(e.target.value)} value={name} className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
           </div>
           <div className="flex flex-col justify-start items-start gap-2 w-full lg:w-5/12">
             <label>Surname *</label>
-            <input type="text" className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
+            <input type="text" onChange={(e) => setSurname(e.target.value)} value={surname} className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-start items-center gap-5 w-full">
           <div className="flex flex-col justify-start items-start gap-2 w-full lg:w-5/12">
             <label>Email *</label>
-            <input type="text" className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
+            <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
           </div>
           <div className="flex flex-col justify-start items-start gap-2 w-full lg:w-5/12">
             <label>Phone</label>
-            <input type="text" className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
+            <input type="text" onChange={(e) => setPhone(e.target.value)} value={phone} className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2'/>
           </div>
         </div>
       </div>
       <div className='w-full px-5 h-16 flex justify-between items-center border-b border-b-gray-300 bg-white'>
         <button className='bg-gray-200 text-gray-500 text-center font-bold text-xs py-2 px-3.5 pb-1.5 border border-gray-300 rounded cursor-pointer' onClick={() => handleSelected(2)}>BACK</button>
-        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' onClick={() => handleSelected(4)} 
+        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' disabled={
+          name === "" || surname === "" || email === "" ? true : false
+        } onClick={() => {
+          handleSelected(4)
+          nameSelected(name);
+          surnameSelected(surname);
+          emailSelected(email);
+          phoneSelected(phone);
+        }} 
         >NEXT STEP</button>
       </div>
     </div>
   )
 }
 
-const ConfirmationBlock = ({changeSelected, date, staff, training}) => {
+const ConfirmationBlock = ({changeSelected, date, staff, training, nameSelected, surnameSelected, emailSelected, phoneSelected}) => {
 
   const handleSelected = (value) => {
     changeSelected(value);
   }
 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_zgticu4', 'template_m5n4q33', form.current, 'q6wt88T_5i6oPlYkD')
+      .then((result) => {
+            console.log(result.text);
+            handleSelected(5)
+      }, (error) => {
+          console.log(error.text);
+    });
+  }
+
   return (
-    <div className='w-full lg:w-[calc(100%-240px)] bg-gray-100 h-full lg:min-h-[600px] flex flex-col justify-start items-start gap-0'>
+    <form method='post' ref={form} onSubmit={sendEmail}  className='w-full lg:w-[calc(100%-240px)] bg-gray-100 h-full lg:min-h-[600px] flex flex-col justify-start items-start gap-0'>
       <div className='w-full px-5 h-16 flex justify-center lg:justify-start items-center border-b border-b-gray-300 bg-white'>
         <h3 className='text-lg font-bold -mb-2 uppercase'>Confirm Details</h3>
       </div>
@@ -336,12 +395,18 @@ const ConfirmationBlock = ({changeSelected, date, staff, training}) => {
           <p className='w-full lg:w-6/12 p-1 text-sm text-center lg:text-left'><b className='font-bold text-callPurple uppercase'>Training: <br className='block lg:hidden' /></b>{training}</p>
         </div>
       </div>
+      <input type="hidden" name="name" value={nameSelected} />
+      <input type="hidden" name="surname" value={surnameSelected} />
+      <input type="hidden" name="email" value={emailSelected} />
+      <input type="hidden" name="phone" value={phoneSelected} />
+      <input type="hidden" name="date" value={date} />
+      <input type="hidden" name="staff" value={staff} />
+      <input type="hidden" name="training" value={training} />
       <div className='w-full px-5 h-16 flex justify-between items-center border-b border-b-gray-300 bg-white'>
         <button className='bg-gray-200 text-gray-500 text-center font-bold text-xs py-2 px-3.5 pb-1.5 border border-gray-300 rounded cursor-pointer' onClick={() => handleSelected(3)}>BACK</button>
-        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' onClick={() => handleSelected(5)}
-        >CONFIRM BOOKING</button>
+        <button className='bg-callPurple text-white text-center font-bold text-xs py-3 px-3.5 pb-2.5 border border-callPurple rounded transition-all cursor-pointer' type='submit'>CONFIRM BOOKING</button>
       </div>
-    </div>
+    </form>
   )
 }
 

@@ -6,20 +6,20 @@ const Footer = () => {
   return (
     <footer className='bg-footer w-full py-20 px-4'>
         <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-start gap-5">
-            <div className='w-full lg:w-1/4 flex justify-center lg:justify-start'>
+            <div className='w-full lg:w-1/4 flex justify-center lg:justify-start pb-8'>
                 <img src={logo} alt="YS Logo" className='w-full max-w-56 lg:max-w-44' />
             </div>
             <div className='w-full lg:w-1/4 flex flex-col justify-start items-center lg:items-start gap-2'>
-                <h5 className='text-lg font-bold text-white pb-5'>Home</h5>
+                <h5 className='text-lg font-bold text-white pb-4 lg:pb-5'>Home</h5>
                 <a href="/#discovery-call" className='text-white font-normal'>Discovery</a>
                 <a href="/#teachers-training" className='text-white font-normal'>Teacher Trainings</a>
                 <a href="/#graduatedHome" className='text-white font-normal'>Testimonials</a>
             </div>
             <div className='w-full lg:w-1/4 flex flex-col justify-start items-center lg:items-start gap-2'>
-                <h5 className='text-lg font-bold text-white pb-5'>Teacher Trainings</h5>
-                <a href="/chakra-mandala" className='text-white font-normal'>Chakra Mandala</a>
+                <h5 className='text-lg font-bold text-white pb-4 lg:pb-5'>Teacher Trainings</h5>
                 <a href="/off-rocket" className='text-white font-normal'>Off-Rocket</a>
-                <a href="/mandala-shamanism" className='text-white font-normal'>Mandala & Shamanism</a>
+                <a href="/tripsichore-immersion" className='text-white font-normal'>Tripsichore Immersion</a>
+                <a href="/20-hours-mandala-mastery" className='text-white font-normal'>Mandala Mastery</a>
                 <a href="/foundation" className='text-white font-normal'>Foundation</a>
             </div>
             <div className='w-full lg:w-1/4 flex flex-row justify-center lg:justify-end items-center gap-8'>
