@@ -166,7 +166,7 @@ const Trainings = () => {
               <AccordionBody>
                 <p className='font-normal pb-4'>In this Intensive Course, Edward Clark (creator of Tripsichore) will expertly guide participants through the intricacies of Tripsichore’s technique.</p>
                 <p className='font-normal pb-5'>This 3 day course is meant for anyone who wants to intelligently move their yoga practice forward.  Regardless of your current level, this Intensive Course will impart the techniques that will show you how to knowledgeably approach yoga.  The Course will have you trying – and accomplishing – material that often appears to be difficult.</p>
-                <a href="#" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
+                <a href="/tripsichore-immersion" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
               </AccordionBody>
             </Accordion>
             <Accordion className={open === 2 ? 'px-4 py-2 bg-light rounded-xl' : 'px-4 py-2 rounded-xl'} open={open === 2} icon={<Icon id={2} open={open} />}>
@@ -175,7 +175,7 @@ const Trainings = () => {
               </AccordionHeader>
               <AccordionBody>
                 <p className='font-normal pb-5'>A 5 day 50 hour training which will explore all aspects of yin yoga, from sequencing, anatomy, philosophy and space holding. Allowing you to create and facilitate beautifully crafted yin yoga classes</p>
-                <a href="#" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
+                <a href="/off-rocket" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
               </AccordionBody>
             </Accordion>
             <Accordion className={open === 3 ? 'px-4 py-2 bg-light rounded-xl' : 'px-4 py-2 rounded-xl'} open={open === 3} icon={<Icon id={3} open={open} />}>
@@ -184,7 +184,7 @@ const Trainings = () => {
               </AccordionHeader>
               <AccordionBody>
                 <p className='font-normal pb-5'>This 250hr training will provide you with the tools and knowledge to be a confident and authentic yoga teacher, or simply to delve into the depths of your own practice.</p>
-                <a href="#" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
+                <a href="/foundation" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
               </AccordionBody>
             </Accordion>
           </div>

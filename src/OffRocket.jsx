@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Layout from './layout/Layout'
 import emailjs from '@emailjs/browser'
+import { Toaster, toast } from 'sonner'
 
 const OffRocket = () => {
 
@@ -13,16 +14,17 @@ const OffRocket = () => {
     e.preventDefault();
 
     emailjs.sendForm('service_zgticu4', 'template_b4w2koh', form.current, 'q6wt88T_5i6oPlYkD')
-      .then((result) => {
-            console.log(result.text);
-            
-      }, (error) => {
-          console.log(error.text);
+      .then(() => {
+            toast.success('Application Form sent successfully')
+            form.current.reset();
+      }, () => {
+          toast.error('Application Form failed to send. Please try again later')
     });
   }
 
   return (
     <Layout>
+      <Toaster position="top-right" closeButton richColors />
         <section className='w-full h-[60svh] bg-[url("/images/MG_0669-scaled.jpg")] bg-cover bg-center relative flex justify-center items-center'>
             <div className="w-full h-full absolute top-0 left-0 bg-black/50 z-10"></div>
             <div className="container relative z-20 px-4">

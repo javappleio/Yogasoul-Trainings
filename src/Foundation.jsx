@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react'
 import Layout from './layout/Layout'
 import emailjs from '@emailjs/browser'
+import { Toaster, toast } from 'sonner'
 
 const Foundation = () => {
 
   const [inputType, setInputType] = useState('text');
-  const [foundationTraining, setFoundationTraining] = useState('');
 
   const form = useRef();
 
@@ -13,16 +13,17 @@ const Foundation = () => {
     e.preventDefault();
 
     emailjs.sendForm('service_zgticu4', 'template_b4w2koh', form.current, 'q6wt88T_5i6oPlYkD')
-      .then((result) => {
-            console.log(result.text);
-            
-      }, (error) => {
-          console.log(error.text);
-    });
+    .then(() => {
+          toast.success('Application Form sent successfully')
+          form.current.reset();
+    }, () => {
+        toast.error('Application Form failed to send. Please try again later')
+  });
   }
 
   return (
     <Layout>
+      <Toaster position="top-right" closeButton richColors />
         <section className='w-full h-[60svh] bg-[url("/images/chakra_mandala-scaled.jpg")] bg-cover bg-center relative flex justify-center items-center'>
             <div className="w-full h-full absolute top-0 left-0 bg-black/50 z-10"></div>
             <div className="container relative z-20 px-4">
@@ -82,7 +83,7 @@ const Foundation = () => {
             <input type={inputType} placeholder='Date of birth *' name='date_birth' onFocus={() => setInputType('date')} className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2' required />
             <input type="text" placeholder='Intention of applying for the course *' name='intention' className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2' required />
             <input type="text" placeholder='Injuries we should know about' name='injuries' className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2' />
-            <p className='text-lg'>Have you completed a foundation training? *</p>
+            {/* <p className='text-lg'>Have you completed a foundation training? *</p> */}
             <input type="hidden" name='completed_foundation' value="No" required />
             <p className='text-lg'>Years of experience *</p>
             <select className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2' name='experience' required>
