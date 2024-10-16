@@ -56,11 +56,17 @@ const heroSlide = [
     hash: "off-rocket"
   },
   {
-    title: "TRIPSICHORE WEEKEND INTENSIVE",
-    description: "Join the creator of this practice, Edward Clark, a practice that has been around since 1979 and borne some of the worlds top teachers yet goes mainly unknown.",
-    image: "/images/sutra.jpg",
-    hash: "tripsichore-immersion"
+    title: "50H YIN YOGA",
+    description: "You will learn to teach Yin Yoga in a way that is safe, accessible, and enjoyable for all students. Join us for a journey of transformation and healing.",
+    image: "/images/yinyoga.png",
+    hash: "50-yin-yoga"
   },
+  // {
+  //   title: "TRIPSICHORE WEEKEND INTENSIVE",
+  //   description: "Join the creator of this practice, Edward Clark, a practice that has been around since 1979 and borne some of the worlds top teachers yet goes mainly unknown.",
+  //   image: "/images/sutra.jpg",
+  //   hash: "tripsichore-immersion"
+  // },
   {
     title: "20 HOURS MANDALA MASTERY",
     description: "The first advanced Mandala TT, Level up your Mandala by understanding Elemental interactions and new creative ways of sequencing with Dulce.",
@@ -162,11 +168,10 @@ const Trainings = () => {
         <div className='flex flex-col lg:flex-row justify-center items-start gap-5 pt-8 w-full'>
           <div className="w-full lg:w-4/12">
             <Accordion className={open === 1 ? 'px-4 py-2 bg-light rounded-xl' : 'px-4 py-2 rounded-xl'} open={open === 1} icon={<Icon id={1} open={open} />}>
-              <AccordionHeader className='border-b-0 text-lg' onClick={() => handleOpen(1)}>Tripsichore</AccordionHeader>
+              <AccordionHeader className='border-b-0 text-lg' onClick={() => handleOpen(1)}>50 Hours Off-rocket</AccordionHeader>
               <AccordionBody>
-                <p className='font-normal pb-4'>In this Intensive Course, Edward Clark (creator of Tripsichore) will expertly guide participants through the intricacies of Tripsichore’s technique.</p>
-                <p className='font-normal pb-5'>This 3 day course is meant for anyone who wants to intelligently move their yoga practice forward.  Regardless of your current level, this Intensive Course will impart the techniques that will show you how to knowledgeably approach yoga.  The Course will have you trying – and accomplishing – material that often appears to be difficult.</p>
-                <a href="/tripsichore-immersion" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
+                <p className='font-normal pb-5'>A 5 Day Advanced teacher training for those eager teachers looking to expand their practice, and teaching knowledge and confidence whilst learning all about the Rocket.</p>
+                <a href="/off-rocket" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
               </AccordionBody>
             </Accordion>
             <Accordion className={open === 2 ? 'px-4 py-2 bg-light rounded-xl' : 'px-4 py-2 rounded-xl'} open={open === 2} icon={<Icon id={2} open={open} />}>
@@ -174,8 +179,8 @@ const Trainings = () => {
               Yin Yoga Teacher Training - 50 Hours
               </AccordionHeader>
               <AccordionBody>
-                <p className='font-normal pb-5'>A 5 day 50 hour training which will explore all aspects of yin yoga, from sequencing, anatomy, philosophy and space holding. Allowing you to create and facilitate beautifully crafted yin yoga classes</p>
-                <a href="/off-rocket" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
+                <p className='font-normal pb-5'>You will learn to teach Yin Yoga in a way that is safe, accessible, and enjoyable for all students. Join us for a journey of transformation and healing.</p>
+                <a href="/50-yin-yoga" className='bg-secondary text-white text-center py-2 px-12 font-medium w-full lg:w-fit block'>APPLY</a>
               </AccordionBody>
             </Accordion>
             <Accordion className={open === 3 ? 'px-4 py-2 bg-light rounded-xl' : 'px-4 py-2 rounded-xl'} open={open === 3} icon={<Icon id={3} open={open} />}>

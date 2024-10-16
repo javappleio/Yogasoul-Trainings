@@ -18,7 +18,7 @@ const Footer = () => {
             <div className='w-full lg:w-1/4 flex flex-col justify-start items-center lg:items-start gap-2'>
                 <h5 className='text-lg font-bold text-white pb-4 lg:pb-5'>Teacher Trainings</h5>
                 <a href="/off-rocket" className='text-white font-normal'>Off-Rocket</a>
-                <a href="/tripsichore-immersion" className='text-white font-normal'>Tripsichore Immersion</a>
+                <a href="/50-yin-yoga" className='text-white font-normal'>50H Yin YOga</a>
                 <a href="/20-hours-mandala-mastery" className='text-white font-normal'>Mandala Mastery</a>
                 <a href="/foundation" className='text-white font-normal'>Foundation</a>
             </div>

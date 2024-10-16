@@ -7,6 +7,7 @@ import Tripsichore from './Tripsichore'
 import Mandala from './Mandala'
 import Foundation from './Foundation'
 import DiscoveryCall from './DiscoveryCall'
+import YinYoga from './YinYoga'
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/off-rocket" element={<OffRocket />} />
-        <Route path="/tripsichore-immersion" element={<Tripsichore />} />
+        {/* <Route path="/tripsichore-immersion" element={<Tripsichore />} /> */}
+        <Route path="/50-yin-yoga" element={<YinYoga />} />
         <Route path="/20-hours-mandala-mastery" element={<Mandala />} />
         <Route path="/foundation" element={<Foundation />} />
         <Route path="/discovery-call" element={<DiscoveryCall />} />
