@@ -49,36 +49,42 @@ function Icon({ id, open }) {
 }
 
 const heroSlide = [
-  {
-    title: "50 Hours Off-rocket",
-    description: "A 5 Day Advanced teacher training for those eager teachers looking to expand their practice, and teaching knowledge and confidence whilst learning all about the Rocket.",
-    image: "/images/offrocket.jpg",
-    hash: "off-rocket"
-  },
+  // {
+  //   title: "50 Hours Off-rocket",
+  //   description: "A 5 Day Advanced teacher training for those eager teachers looking to expand their practice, and teaching knowledge and confidence whilst learning all about the Rocket.",
+  //   image: "/images/offrocket.jpg",
+  //   hash: "off-rocket"
+  // },
   {
     title: "50H YIN YOGA",
     description: "You will learn to teach Yin Yoga in a way that is safe, accessible, and enjoyable for all students. Join us for a journey of transformation and healing.",
     image: "/images/yinyoga.png",
     hash: "50-yin-yoga"
   },
-  // {
-  //   title: "TRIPSICHORE WEEKEND INTENSIVE",
-  //   description: "Join the creator of this practice, Edward Clark, a practice that has been around since 1979 and borne some of the worlds top teachers yet goes mainly unknown.",
-  //   image: "/images/sutra.jpg",
-  //   hash: "tripsichore-immersion"
-  // },
   {
-    title: "20 HOURS MANDALA MASTERY",
-    description: "The first advanced Mandala TT, Level up your Mandala by understanding Elemental interactions and new creative ways of sequencing with Dulce.",
-    image: "/images/mandala.jpg",
-    hash: "20-hours-mandala-mastery"
+    title: "TRIPSICHORE WEEKEND INTENSIVE",
+    description: "Tripsichore is the most coherent Vinyasa Yoga technique and is a form of practice that is appropriate for the challenges of 21st Century life.",
+    image: "/images/sutra.jpg",
+    hash: "tripsichore-immersion"
   },
   {
-    title: "FOUNDATION",
-    description: "This teacher training is for, students who are looking to develop their understanding of the yoga practice, continue their spiritual journey.",
-    image: "/images/foundation.jpg",
-    hash: "foundation"
-  }
+    title: "MANDALA METHODOLOGY",
+    description: "Reignite your practice + Get the keys to create & teach Mandala practice with Dulce and learn the methodology behind Mandala.",
+    image: "/images/mandalamethodology.jpeg",
+    hash: "mandala-methodology"
+  },
+  {
+    title: "ADJUSTMENTS WEEKEND",
+    description: "Hands on adjustments are a dying art, I call them an art because it is a skill.",
+    image: "/images/adjustments_weekend.jpg",
+    hash: "adjustments-weekend"
+  },
+  // {
+  //   title: "FOUNDATION",
+  //   description: "This teacher training is for, students who are looking to develop their understanding of the yoga practice, continue their spiritual journey.",
+  //   image: "/images/foundation.jpg",
+  //   hash: "foundation"
+  // }
 ]
 
 function Home() {
@@ -87,7 +93,7 @@ function Home() {
     <Layout>
       <Hero />
       <DiscoveryCall />
-      <Trainings />
+      {/* <Trainings /> */}
       <Graduated />
       <Connect />
       <BePart />
@@ -205,7 +211,7 @@ const Graduated = () => {
 
   return (
     <>
-      <section className='container mx-auto pb-20 px-4 pt-5' id="graduatedHome">
+      <section className='container mx-auto pb-20 px-4 pt-20' id="graduatedHome">
         <h2 className='mx-auto text-center font-fjalla text-4xl lg:text-5xl font-medium pb-5'>PREVIOUS GRADUATES</h2>
         <p className='lg:text-lg mx-auto w-full max-w-[630px] text-center pb-4 lg:pb-10'>Get to know some students that have been part of previous teacher training editions (even more than once). Better to hear it from them.</p>
         <Splide options={{

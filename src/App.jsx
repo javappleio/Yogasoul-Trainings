@@ -8,17 +8,21 @@ import Mandala from './Mandala'
 import Foundation from './Foundation'
 import DiscoveryCall from './DiscoveryCall'
 import YinYoga from './YinYoga'
+import AdjustmentsWeekend from './AdjustmentsWeekend'
+import MandalaMethodology from './MandalaMethodology'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/off-rocket" element={<OffRocket />} />
-        {/* <Route path="/tripsichore-immersion" element={<Tripsichore />} /> */}
+        {/* <Route path="/off-rocket" element={<OffRocket />} /> */}
+        <Route path="/tripsichore-immersion" element={<Tripsichore />} />
         <Route path="/50-yin-yoga" element={<YinYoga />} />
-        <Route path="/20-hours-mandala-mastery" element={<Mandala />} />
-        <Route path="/foundation" element={<Foundation />} />
+        {/* <Route path="/20-hours-mandala-mastery" element={<Mandala />} /> */}
+        <Route path="/mandala-methodology" element={<MandalaMethodology />} />
+        {/* <Route path="/foundation" element={<Foundation />} /> */}
+        <Route path="/adjustments-weekend" element={<AdjustmentsWeekend />} />
         <Route path="/discovery-call" element={<DiscoveryCall />} />
         <Route path="/terms-conditions" element={<TermnsConditions />} />
         <Route path="*" element={<Home />} />

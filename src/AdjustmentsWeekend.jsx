@@ -3,7 +3,7 @@ import Layout from './layout/Layout'
 import emailjs from '@emailjs/browser'
 import { Toaster, toast } from 'sonner'
 
-const Tripsichore = () => {
+const AdjustmentsWeekend = () => {
 
   const [inputType, setInputType] = useState('text');
   const [foundationTraining, setFoundationTraining] = useState('');
@@ -25,40 +25,45 @@ const Tripsichore = () => {
   return (
     <Layout>
       <Toaster position="top-right" closeButton richColors />
-        <section className='w-full h-[60svh] bg-[url("/images/ED-148-hi-res-copy-scaled.jpg")] bg-cover bg-center relative flex justify-center items-center'>
+        <section className='w-full h-[60svh] bg-[url("/images/adjustments_weekend.jpg")] bg-cover bg-center relative flex justify-center items-center'>
             <div className="w-full h-full absolute top-0 left-0 bg-black/50 z-10"></div>
             <div className="container relative z-20 px-4">
-                <h1 className='text-white text-4xl lg:text-6xl font-bold uppercase'>TRIPSICHORE WEEKEND INTENSIVE</h1>
-                <h2 className='text-lg lg:text-2xl text-white font-light pt-2'>A challenging practice – Accessible to Everyone</h2>
+                <h1 className='text-white text-4xl lg:text-6xl font-bold uppercase'>ADJUSTMENTS WEEKEND</h1>
+                <h2 className='text-lg lg:text-2xl text-white font-light pt-2'>Hands on adjustments are a dying art, I call them an art because it is a skill.</h2>
             </div>
         </section>
         <section className='container mx-auto py-10 lg:py-20 px-4 flex flex-col lg:flex-row justify-between items-start gap-5'>
           <div className="flex flex-col justify-start items-start gap-4 w-full lg:w-8/12">
-            <h2 className='text-3xl font-bold text-dark border-b-2 border-b-primary'>Tripsichore</h2>
-            <p className='text-lg'>KNOWLEDGE FROM THE SOURCE: or If It Was Easy, Everyone Would Do It  
-            FOUNDATION COURSE IN TRIPSICHORE TECHNIQUE taught by Edward Clark  </p>
-            <p className='text-lg'>Tripsichore is the most coherent Vinyasa Yoga technique and is a form of practice that is appropriate for the challenges of 21st Century life.  It is challenging physically and intellectually.  Tripsichore prioritises the personal experience over scholastic theory or the curious received opinions that abound in yoga today.  It does require hard thinking about the personal relevance of a challenging physical practice.</p>
+            <h2 className='text-3xl font-bold text-dark border-b-2 border-b-primary'>Adjustments Weekend</h2>
+            <p className='text-lg'>Hands on adjustments are a dying art, I call them an art because it is a skill. One, like any other skill you have to work on consistently or perhaps you may lose some confidence, get out of the swing of it and find yourself again wondering, how to adjust ?</p>
             <br />
             <h2 className='text-3xl font-bold text-dark border-b-2 border-b-primary'>What to expect</h2>
-            <p className='text-lg'>Tripsichore originated in the pursuit of a theatrical vocabulary to express the complicated spiritual ideas found in yoga.  As such, it has crafted a technique that is also an aesthetic philosophy – it asks each student to consider the subject of beauty in ways that go far beyond the yoga studio.  The results are spectacularly complex postures and movements executed with grace and feeling.</p>
+            <p className='text-lg'>This weekend is to provide you with insights into how to make adjustments work for you in your unique way, allowing you to explore different aspects, types, and methodology of adjustments that will help you if you are:</p>
+            <ul className='list-disc list-inside text-lg'>
+                <li>Wanting to learn more about them</li>
+                <li>Need confidence in building them into your classes</li>
+                <li>A Newer teacher with lots to think about so adjustments were at the back of the list but now they are creeping up on the list</li>
+                <li>Any teacher interested in learning, exploring, upskilling in the area of adjustments</li>
+            </ul>
             <br />
             <h2 className='text-3xl font-bold text-dark border-b-2 border-b-primary'>Course Overview</h2>
-            <p className='text-lg'>Location: yoga soul Levenshulme, 823a Stockpost Road, M19 3PN</p>
-            <p className='text-lg'>Cost: £275 (£225 for yoga teachers)</p>
-            <br />
-            <h2 className='text-3xl font-bold text-dark border-b-2 border-b-primary'>Your Teacher - Edward Clark</h2>
-            <p className='text-lg'>Edward Clark is the creator of Tripsichore, the London-based yoga performance group that has delighted audiences around the world. The performance company was created to explore the possibilities of a form of theater that would celebrate Yogic philosophy and extraordinary physical prowess. Edward began studying yoga in 1979. Notable among his teachers are Narayani and Giris Rabinovitch, but he also admires Ashtanga vinyasa, Sivananda, Iyengar, and viniyoga practices. The Tripsichore group has practiced daily for the past 40 years, devising and refining its techniques for asana, pranayama, pratayahara, dharana, and dhyana. Edward fuses his keen artistic vision with a deep understanding of the essential pursuit of yoga practice. His classes are entertaining, demanding, and exhilarating.</p>
+            <p className='text-lg'>Facilitator: Samuel Nwokeka</p>
+            <p className='text-lg'>Requirements:</p>
+            <ul className='list-disc list-inside text-lg'>
+                <li>Actively teaching yoga </li>
+                <li>Foundation (200) hour course</li>
+            </ul>
           </div>
           <form method='post' ref={form} onSubmit={sendEmail}  className="flex flex-col justify-start items-start gap-4 w-full lg:w-4/12">
             <h2 className='text-3xl font-bold text-dark border-b-2 border-b-primary'>Prices & Booking</h2>
-            <p className='text-lg'>Dates: Friday 16th may 6-8PM</p>
-            <p className='text-lg'>Saturday :10am-12.30pm & 1.30pm-4pm</p>
-            <p className='text-lg'>Sunday: :10am-12.30pm & 1.30pm-4pm</p>
-            <p className='text-lg'>Location: yoga soul Levenshulme, 823a Stockpost Road, M19 3PN</p>
-            <p className='text-lg'>Cost: £275 (£225 for yoga teachers)</p>
+            <p className='text-lg'>Regular Price £200</p>
+            <p className='text-lg'>Early Bird price: £150</p>
+            <p className='text-lg'>Price does not include: travel, accommodation or food</p>
+            <p className='text-lg'>Date: 19th & 20th Of April 2025</p>
+            <p className='text-lg'>Location: yoga soul, Levenshulme, 823a Stockport Road, M193PN</p>
             <br />
             <h2 className='text-3xl font-bold text-dark border-b-2 border-b-primary mb-5'>Application Form</h2>
-            <input type="hidden" name="form_name" value="Tripsichore" />
+            <input type="hidden" name="form_name" value="Adjustments Weekend" />
             <input type="text" placeholder='Name *' name='name' className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2' required />
             <input type="tel" placeholder='Phone' name='phone' className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2' />
             <input type="mail" placeholder='Email *' name='email' className='w-full p-3 border border-gray-300 focus:border-gray-400 mb-2' required />
@@ -91,4 +96,4 @@ const Tripsichore = () => {
   )
 }
 
-export default Tripsichore
+export default AdjustmentsWeekend
